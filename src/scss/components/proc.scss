@@ -1,0 +1,258 @@
+.proc {
+    position: relative;
+    @include adaptiveClamp(padding-top, 188, 40);
+    @include adaptiveClamp(padding-bottom, 188, 40);
+
+		&__container {
+            position: relative;
+            z-index: 1;
+            color: var(--white-color)
+		}
+
+		&__title {
+            @include adaptiveClamp(margin-bottom, 80, 14);
+		}
+
+		&__row {
+            display: flex;
+            // align-items: end;
+            gap: rem(80);
+
+            @media(max-width:1024px){
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                gap: rem(24);
+            }
+
+            @media(max-width:675px){
+                display: flex;
+                flex-direction: column;
+            }
+		}
+
+		&__left {
+		}
+
+		&__right {
+		}
+}
+.bs-title {
+}
+.proc-l {
+
+    max-width: rem(457);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    @media(max-width:1024px){
+        // max-width: none;
+        // width: auto;
+        // max-width: 100%;
+        width: 100%;
+        max-width: 100%;
+    }
+
+		&__slider {
+            overflow: hidden;
+            min-width: 0;
+		}
+
+		&__wrapper {
+		}
+
+		&__slide {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+		}
+
+		&__title {
+            display: flex;
+            align-items: center;
+            gap: rem(24);
+            // @include adaptiveClamp(font-size, 42, 20);
+            text-transform: none;
+            @include adaptiveClamp(margin-bottom, 24, 16);
+            color: var(--yellow-color);
+
+            .number {
+                @include adaptiveClamp(font-size, 56, 24);
+                line-height: 160%;
+            }
+		}
+
+		&__body {
+            display: flex;
+            flex-direction: column;
+            @include adaptiveClamp(gap, 24, 16);
+
+            p {
+                font-family: var(--bs-font-text);
+                @include adaptiveClamp(font-size, 18, 14);
+
+                .yel-text {
+                    // color: var(--yellow-color);
+                }
+            }
+
+            
+		}
+
+        &__pagin {
+            width: max-content;
+            margin-left: auto;
+            @include adaptiveClamp(margin-top, 24, 16);
+        }
+}
+
+.proc-r {
+    // max-width: rem(440);
+    // max-width: 110%;
+    
+    overflow: hidden;
+    
+    @media(min-width:1025px){
+        @include adaptiveClamp(padding-left, 120, 150);
+        min-width: 60vw;
+    }
+    @media(max-width:1024px){
+        width: 100%;
+    }
+    @media(max-width:675px){
+        overflow: unset;
+    }
+
+    &__slider {
+        @media(min-width:1025px){
+            @include adaptiveClamp(width, 320, 200);
+        }
+        // width: calc(100% + 70vw);
+        // margin-right: -70vw;
+        // padding-right: 70vw;
+        // max-width: 60vw;
+        min-width: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    // &__slide {
+    //     display: flex;
+    //     align-items: center;
+    //     @include adaptiveClamp(height, 500, 300);
+    //     min-width: 0;
+    //     // @include adaptiveClamp(width, 440, 350);
+    //     transition: width 0.3s ease  0s;
+
+    //     .des-slide {
+    //         min-width: 0;
+    //         width: 100%;
+    //         aspect-ratio: 440 / 500;
+    //         @include adaptiveClamp(height, 500, 300);
+    //         transition: all 0.3s ease  0s;
+    //     }
+
+    //     &:not(.swiper-slide-active) {
+    //         @include adaptiveClamp(width, 320, 200);
+
+    //         .des-slide {
+    //             @include adaptiveClamp(width, 320, 200);
+    //             @include adaptiveClamp(height, 400, 250);
+    //             aspect-ratio: 320 / 400;
+                
+    //         }
+    //     }
+
+    //     &:not(.swiper-slide-active):not(.swiper-slide-next) {
+    //         .des-slide {
+    //             // @include adaptiveClamp(margin-left, -120, -150);
+    //         }
+    //     }
+    // }
+
+
+    &__slide {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        
+
+        @media(min-width:1025px){
+            @include adaptiveClamp(width, 320, 200);
+            @include adaptiveClamp(max-width, 320, 200);
+            z-index: 1;
+            @include adaptiveClamp(height, 500, 300);
+            // transition: width 0.3s ease  0s;
+
+            .des-slide {
+                min-width: 0;
+                width: 100%;
+                aspect-ratio: 320 / 400;
+                @include adaptiveClamp(height, 400, 250);
+                transition: all 0.8s ease  0s;
+            }
+
+            &.swiper-slide-active {
+                // @include adaptiveClamp(width, 320, 200);
+                position: relative;
+                z-index: 2;
+                .des-slide {
+                    @include adaptiveClamp(width, 440, 350);
+                    @include adaptiveClamp(height, 500, 300);
+                    @include adaptiveClamp(margin-left, -120, -150);
+                    aspect-ratio: 440 / 500;
+                }
+            }
+        }
+
+        @media(max-width:1024px){
+            width: 100%;
+
+            .des-slide {
+                width: 100%;
+                aspect-ratio: 348 / 400;
+                min-height: 100%;
+            }
+        }
+        
+
+    }
+
+    &__wrapper {
+        align-items: center;
+    }
+
+    .des-slide {
+        position: relative;
+
+        // min-width: 0;
+        // width: 100%;
+        // aspect-ratio: 440 / 500;
+        // @include adaptiveClamp(height, 500, 300);
+        // transition: width 0.3s ease  0s;
+
+        // &:not(.swiper-slide-active) {
+        //     @include adaptiveClamp(width, 320, 200);
+        //     @include adaptiveClamp(height, 400, 250);
+        //     aspect-ratio: 320 / 400;
+        // }
+
+        &__body {
+        }
+
+        &__title {
+            padding-left: 0;
+            border: none;
+            @include adaptiveClamp(font-size, 28, 18);
+            color: var(--white-color);
+            font-family: var(--bs-font-family);
+        }
+
+        img {
+            transform: scale(1);
+            transition: all 0.3s ease  0s;
+        }
+    }
+}

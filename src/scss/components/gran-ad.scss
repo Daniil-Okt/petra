@@ -1,0 +1,43 @@
+.gran-ad {
+
+
+    &__title {
+
+    }
+    &__row {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        @include adaptiveClamp(column-gap, 24, 16);
+        @include adaptiveClamp(row-gap, 80, 24);
+
+        @media(max-width:1024px){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item-text {
+        .advant__i-row {
+            margin: 0 !important;
+            padding: 0 !important;
+            opacity: 0;
+            height: 0 !important;
+        }
+    }
+
+    .granit__img {
+
+        @media(max-width:1024px){
+            
+            @include adaptiveClamp(height, 600, 200);
+        }
+    }
+
+    &__bot {
+        @include adaptiveClamp(margin-top, 64, 36);
+        @include adaptiveClamp(font-size, 24, 15);
+        @include adaptiveClamp(padding, 40, 12);
+        background: rgba(240, 187, 90, 0.1);
+        border-left: 2px solid var(--yellow-color);
+    }
+}

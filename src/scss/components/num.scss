@@ -1,0 +1,116 @@
+.num {
+
+    &__body {
+        position: relative;
+        // background: var(--black-color);
+    }
+
+    &__fon {
+        
+
+        
+    }
+
+    &__container {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        gap: rem(92);
+        @include adaptiveClamp(padding-top, 80, 24);
+        @include adaptiveClamp(padding-bottom, 80, 24);
+    }
+
+    &__row {
+        max-width: rem(1128);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: rem(24);
+
+        @media(max-width:1440px) and (min-width: 1025px){
+            @include adaptiveClamp(max-width, 900, 500);
+        }
+
+        @media(max-width:1024px){
+            grid-template-columns: 1fr;
+            @include adaptiveClamp(margin-right, 600, 80);
+        }
+        
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media(max-width:1024px){
+            flex-direction: row;
+            gap: rem(24);
+        }
+        @media(max-width:500px){
+            @include adaptiveClamp(gap, 15, 5);
+        }
+    }
+
+    &__title {
+        font-size: rem(200);
+        letter-spacing: 0.01em;
+
+        @media(max-width:1440px){
+            font-size: rem(160);
+            @include adaptiveClamp(font-size, 180, 48);
+        }
+    }
+
+    &__text {
+        text-align: center;
+        color: var(--white-color);
+        font-size: rem(28);
+        letter-spacing: 0.04em;
+
+        @media(max-width:1440px){
+            font-size: rem(21);
+            @include adaptiveClamp(font-size, 24, 17);
+        }
+
+        @media(max-width:1024px){
+            text-align: left;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        width: rem(359);
+        bottom: 0;
+        right: rem(-100);
+
+        picture, img {
+            width: 100%;
+        }
+
+        @media(max-width:1440px){
+            right: rem(-50);
+        }
+        @media(max-width:1350px){
+            width: rem(300);
+            right: 0;
+        }
+        @media(max-width:1180px){
+            right: rem(-50);
+        }
+        @media(max-width:1024px){
+            @include adaptiveClamp(width, 550, 160);
+            right: 0;
+        }
+        @media(max-width:760px){
+            right: rem(-50);
+        }
+    }
+}
+.pos-ab-cover {
+}
+.lazy {
+}
+.cover {
+}
+.yel-text {
+}

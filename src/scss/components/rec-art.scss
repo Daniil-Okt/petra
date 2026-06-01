@@ -1,0 +1,104 @@
+.rec-art {
+
+		&__container {
+		}
+
+		&__title {
+		}
+
+		&__pagin {
+		}
+
+		&__slider {
+            overflow: hidden;
+		}
+
+		&__wrapper {
+		}
+
+		&__slide {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+
+            &:hover {
+                .rec-art__s-img  img {
+                    transform: scale(1.05);
+                }
+
+                .rec-art__s-title {
+                    color: var(--yellow-color);
+                }
+                .rec-art__s-icon {
+                    transform: rotate(90deg);
+                }
+            }
+		}
+
+		&__s-img {
+            aspect-ratio: 342 / 367;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                aspect-ratio: 342 / 367;
+                transition: all 0.5s ease-in-out  0s;
+            }
+            
+		}
+
+		&__s-body {
+            display: flex;
+            flex-direction: column;
+            padding: rem(16);
+            flex: auto;
+		}
+
+		&__s-title {
+            @include adaptiveClamp(font-size, 16, 13);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: rem(8);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;          
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--bs-font-color);
+            transition: all 0.3s ease  0s;
+		}
+
+		&__s-text {
+            margin-bottom: rem(16);
+            @include adaptiveClamp(font-size, 14, 12);
+            font-family: var(--bs-font-text);
+            color: var(--gray-color-3);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;          
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+		}
+
+		&__s-bot {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: rem(2);
+		}
+
+		&__s-date {
+            color: var(--blue-color);
+            @include adaptiveClamp(font-size, 12, 10);
+		}
+
+		&__s-icon {
+            transition: all 0.3s ease  0s;
+            img {
+                width: rem(24);
+                height: rem(24);
+            }
+		}
+}

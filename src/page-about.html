@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'О нас'
+  })
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html')
+
+      <main class="page">
+        <div data-observ></div>
+        @@include('html/page-about/about.html')
+        @@include('html/advant.html')
+        @@include('html/num.html')
+        @@include('html/certif.html')
+        @@include('html/prod.html')
+        @@include('html/calm.html')
+        @@include('html/review.html')
+        @@include('html/serv.html')
+        @@include('html/connect.html', {
+            'classDop':'pt-sec'
+        })
+        
+      </main>
+
+      @@include('html/footer.html')
+    </div>
+
+    @@include('html/popup-example.html')
+  </body>
+</html>

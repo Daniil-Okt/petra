@@ -1,0 +1,157 @@
+.review {
+    
+    // background: #;
+
+    &__body {
+        position: relative;
+    }
+		&__container {
+            position: relative;
+            z-index: 1;
+		}
+
+		&__title {
+            color: var(--white-color);
+		}
+
+		&__top {
+            display: flex;
+            justify-content: end;
+            @include adaptiveClamp(margin-bottom, 24, 16);
+		}
+
+		&__pagin {
+		}
+
+		&__btn-prev {
+		}
+
+		&__pagin-number {
+		}
+
+		&__btn-next {
+		}
+
+		&__slider {
+            overflow: hidden;
+
+		}
+
+		&__wrapper {
+		}
+
+		&__slide {
+                  height: auto;
+		}
+}
+
+.pagin {
+
+		&__btn-prev {
+		}
+
+		&__btn {
+		}
+
+		&__number {
+		}
+
+		&__btn-next {
+		}
+}
+
+.rev-card {
+
+		&__body {
+            display: flex;
+            height: 100%;
+            @include adaptiveClamp(min-height, 396, 300);
+
+            @media(max-width:575px){
+                flex-direction: column;
+            }
+		}
+
+		&__img {
+            width: 100%;
+
+            @media(max-width:575px){
+                @include adaptiveClamp(height, 700, 300);
+            }
+		}
+
+		&__right {
+            padding: rem(24);
+            background: var(--white-color);
+            max-width: rem(332);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            @media(max-width:1150px){
+                max-width: 47.5%;
+            }
+            @media(max-width:575px){
+                max-width: 100%;
+            }
+		}
+
+		&__name {
+            @include adaptiveClamp(font-size, 16, 13);
+		}
+
+		&__date {
+            color: var(--gray-color-3);
+            font-size: rem(14);
+            font-weight: 600;
+            line-height: 171%;
+            letter-spacing: 0.01em;
+            margin-bottom: rem(16);
+		}
+
+		&__star {
+            display: flex;
+            gap: rem(2);
+            margin-bottom: rem(16);
+            img {
+                width: rem(21);
+                height: rem(20);
+            }
+		}
+
+		&__text {
+            color: var(--gray-color-3);
+            display: -webkit-box;
+            -webkit-line-clamp: 10;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: auto;
+            @include adaptiveClamp(font-size, 14, 12);
+		}
+
+		&__bot {
+            margin-top: rem(16);
+		}
+
+		&__btn {
+            color: var(--yellow-color);
+            @include adaptiveClamp(font-size, 16, 15);
+            text-align: center;
+            padding: rem(8);
+            transition: all 0.3s ease  0s;
+            letter-spacing: 0.06em;
+            cursor: pointer;
+            font-weight: 600;
+
+            &:hover {
+                opacity: 0.7;
+            }
+		}
+}
+.swiper-slide {
+}
+.lazy {
+}
+.font-text {
+}

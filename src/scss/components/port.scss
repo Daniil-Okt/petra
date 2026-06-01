@@ -1,0 +1,118 @@
+.port {
+
+		&__container {
+		}
+
+        .bs-title {
+            @include adaptiveClamp(margin-bottom, 40, 20);
+        }
+
+        &__body {
+            display: flex;
+            flex-direction: column;
+            gap: rem(24);
+            max-width: rem(1140);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+		&__row {
+            display: flex;
+            gap: rem(24);
+            
+            @media(max-width:575px){
+                flex-direction: column;
+
+                &:not(:first-child) {
+                    display: none;
+                }
+            }
+
+            
+		}
+
+		&__item-big {
+            display: block;
+            position: relative;
+            max-width: rem(581);
+            width: 100%;
+            height: auto;
+            flex: auto;
+		}
+
+		&__img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            @media(max-width:575px){
+                img {
+                    position: relative;
+                    aspect-ratio: 372 / 200;
+                    height: auto;
+                }
+            }
+		}
+
+		&__item-min {
+            max-height: 100%;
+            width: 100%;
+            max-width: rem(535);
+            aspect-ratio: 535 / 778;
+
+            @media(max-width:850px){
+                aspect-ratio: 346 / 424;
+                height: 100%;
+            }
+            @media(max-width:575px){
+                max-width: 100%;
+                aspect-ratio: unset;
+            }
+		}
+
+        &__grid {
+            display: grid;
+            gap: rem(24);
+            height: 100%;
+
+            &._col-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            &._row-2 {
+                grid-template-rows: 1fr 1fr;
+                // height: 100%;
+            }
+
+            @media(max-width:575px){
+                grid-template-columns: 1fr !important;
+                grid-template-rows: unset !important;
+            }
+        }
+
+        &__btn-row {
+            display: none;
+
+            @media(max-width:575px){
+                display: block;
+                margin-top: rem(24);
+            }
+        }
+        &__btn {
+            
+            
+            @media(max-width:575px){
+                display: flex;
+                align-items: center;
+                width: 100%;
+                min-height: rem(58);
+                letter-spacing: 0.08em;
+            }
+        }
+}
+.pt-sec {
+}
+.lazy {
+}
+.cover {
+}

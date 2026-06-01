@@ -1,0 +1,84 @@
+@use 'sass:math';
+
+/**
+* Подключение шрифтов локально из папки "./src/fonts"
+*/
+@import 'config/fonts';
+
+/** Подключение переменных */
+@import 'config/vars';
+
+/**
+* Подключение sass function и mixins и extends стилей
+*/
+@import 'config/functions';
+@import 'config/mixins';
+@import 'config/placeholders';
+
+/** Обнуление */
+@import 'config/reset';
+
+/**
+* Библиотеки
+* раскомментировать для использования
+*/
+@import 'libs/aos';
+@import 'libs/swiper';
+// @import 'libs/cursor-point';
+
+/**
+* Подключение custom scrollbar для всего сайта
+*/
+@import 'config/scrollbar';
+
+/**
+* Общие параметры, шаблоны(заготовки) и вспомогательные классы
+*/
+@import 'config/base';
+
+/**
+* БЕМ блоки используемые во всё проекте
+*/
+@import 'config/common';
+
+/**
+* Функциональные блоки используемые во всё проекте
+*/
+@import 'components/popup';
+// @import 'components/checkbox';
+// @import 'components/tabs';
+// @import 'components/accordion';
+/**
+* Подключение стилей отдельных блоков и секций
+*/
+@import 'components/header';
+@import 'components/about';
+@import 'components/advant';
+@import 'components/num';
+@import 'components/certif';
+@import 'components/prod';
+@import 'components/calm';
+@import 'components/review';
+@import 'components/serv';
+@import 'components/connect';
+
+@import 'components/footer';
+
+
+@import 'components/port';
+@import 'components/des';
+@import 'components/proc';
+@import 'components/consul';
+@import 'components/exam';
+@import 'components/grat';
+@import 'components/faq';
+@import 'components/inst';
+
+
+@import 'components/catalog';
+@import 'components/granit';
+@import 'components/rec-art';
+@import 'components/gran-ad';
+@import 'components/mplex';
+
+

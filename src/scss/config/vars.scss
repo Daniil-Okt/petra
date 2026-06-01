@@ -1,0 +1,39 @@
+$mainOffset: 40; // отступы безопасности для контейнера
+$maxWidth: 1920; // максимальная ширина страницы
+$minWidth: 320; // минимальная ширина телефона
+$minWidthMaket: 360; // минимальная ширина телефона из Дизайна
+$containerWidth: 1440; // ширина контейнера из макета
+$maxWidthContainer: $containerWidth + ($mainOffset * 2); // ширина контейнера с учетом padding слева и справа
+
+$headerHeight: 100;
+$footerHeight: 100;
+
+:root {
+  --bs-font-family: 'PoiretOne', sans-serif; // Семейство шрифта по умолчанию
+  --bs-font-text: 'Raleway', sans-serif;
+  --bs-font-quote: 'GreatVibes', sans-serif;
+  --bs-font-size: 16px; // Размер шрифта по умолчанию
+  --bs-font-weight: 400; // Жирность шрифта по умолчанию
+  --bs-line-height: 1.4; // Базовая высота шрифта
+  --bs-font-color: #45494e; // Цвет шрифта по умолчанию
+  --bs-transition: .3s ease-in-out;
+  --bs-radius: 10px;
+
+  --primary-color: #131313;
+  --primary-hover-color: #2d2d2d;
+  --secondary-color: #ff4040;
+  --white-color: #fff;
+  --black-color: #000;
+  --gray-color: #45494e;
+  --yellow-color: #f0bb5a;
+  --gray-color-2: #27292c;
+  --gray-color-3: #475569;
+  --blue-color: #3b82f6;
+  
+
+
+  --bs-shadow: 0px 2px 3px rgba(#000, 10%), 0px 8px 3px rgba(#000, 10%);
+  --hover-shadow: 0 0 5px 0 rgba(#000, 10%),
+                  0 0 10px 0 rgba(#000, 10%),
+                  0 0 15px 0 rgba(#000, 10%);
+}

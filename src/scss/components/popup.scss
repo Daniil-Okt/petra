@@ -1,0 +1,161 @@
+.popup {
+  $white-100: #fff;
+
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  overflow-y: auto;
+  pointer-events: none;
+
+  /** Установить свои значения */
+  padding: rem(30) rem(10);
+  background-color: rgba(#000, 50%);
+  z-index: 2000;
+  transition: opacity 0.4s ease-in-out;
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: auto;
+
+    .popup__content {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  // .popup__wrapper
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+  }
+
+  // .popup__content
+  &__content {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+
+    /** Установить свои значения */
+    padding: rem(30) rem(50);
+    max-width: rem(690);
+    background-color: $white-100;
+    transform: translateY(rem(-200)) scale(0.5);
+    opacity: 0;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  }
+
+  // .popup__close
+  &__close {
+    position: absolute;
+    z-index: 2;
+
+    /** Установить свои значения */
+    top: rem(18);
+    right: rem(18);
+    width: rem(25);
+    height: rem(25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    color: #000;
+    border-radius: rem(8);
+    transform: rotate(45deg);
+    transition: all 0.3s ease  0s;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: rem(13);
+        height: rem(2);
+        background: #475569;
+        top:50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        border-radius: 5px;
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        width: rem(13);
+        height: rem(2);
+        background: #475569;
+        top:50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%) rotate(-90deg);
+        border-radius: 5px;
+    }
+
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+
+.popup-reviews__content {
+  padding: 0;
+  max-width: rem(1440);
+
+  .popup__close {
+    @media(max-width:650px){
+      background: #ffffff;
+      border-radius: 50%;
+      backdrop-filter: blur(10px);
+      top: rem(10);
+      right: rem(10);
+    }
+  }
+  .rev-card {
+    &__body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: rem(530);
+
+      @media(max-width:650px){
+        min-height: auto;
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    &__img {
+      position: relative;
+      // aspect-ratio: 720 / 530;
+      max-height: 100%;
+      height: 100%;
+      width: 100%;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      @media(max-width:650px){
+        img {
+          position: relative;
+          @include adaptiveClamp(height, 500, 300);
+        }
+      }
+    }
+
+    &__right {
+      max-width: 100%;
+    }
+
+    &__text {
+      overflow: visible;
+      -webkit-line-clamp: unset;
+      line-clamp: unset;
+      margin-bottom: 0;
+    }
+
+    &__bot {
+      display: none;
+    }
+  }
+}

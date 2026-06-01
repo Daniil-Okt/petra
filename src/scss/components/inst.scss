@@ -1,0 +1,91 @@
+.inst {
+
+		&__container {
+		}
+
+		&__title {
+            @include adaptiveClamp(margin-bottom, 24, 16);
+            text-transform: none;
+		}
+
+		&__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            // @include adaptiveClamp(gap, 80, 24);
+            gap: rem(80);
+
+            @media(max-width:1400px){
+                gap: rem(24);
+            }
+            @media(max-width:1024px){
+                grid-template-columns: 1fr;
+            }
+		}
+
+		&__item {
+            display: flex;
+            flex-direction: column;
+            gap: rem(16);
+            @include adaptiveClamp(font-size, 16, 13);
+            font-family: var(--bs-font-text);
+
+            p, li {
+                
+            }
+
+            ul, ol {
+                display: flex;
+                flex-direction: column;
+                @include adaptiveClamp(gap, 8, 4);
+            }
+
+            ul li {
+                display: flex;
+                align-items: center;
+                @include adaptiveClamp(gap, 8, 4);
+
+                &::before {
+                    position: relative;
+                    content: '';
+                    width: rem(18);
+                    height: rem(18);
+                    background: url(@img/ul-str.svg) no-repeat center center / contain;
+                }
+            }
+
+            ol li {
+                position: relative;
+                @include adaptiveClamp(padding-left, 24, 20);
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: rem(16);
+                    height: rem(1.5);
+                    background: var(--yellow-color);
+                    top: rem(12);
+                    left: 0;
+                }
+            }
+
+            h3 {
+                font-family: var(--bs-font-family);
+                @include adaptiveClamp(font-size, 24, 17);
+            }   
+
+            img {
+                aspect-ratio: 680 / 300;
+
+                @media(max-width:575px){
+                    aspect-ratio: 372 / 200;
+                }
+            }
+
+            u {
+                color: var(--yellow-color);
+            }
+		}
+}
+.yellow-text {
+}

@@ -1,0 +1,51 @@
+.granit {
+
+		&__container {
+		}
+
+		&__title {
+		}
+
+		&__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: rem(80);
+            @media(max-width:1400px){
+                @include adaptiveClamp(gap, 24, 16);
+            }
+            @media(max-width:850px){
+                grid-template-columns: 1fr;
+            }
+		}
+
+		&__img {
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+            @media(max-width:850px){
+                @include adaptiveClamp(height, 500, 200);
+            }
+		}
+
+		&__body {
+            display: flex;
+            flex-direction: column;
+            @include adaptiveClamp(gap, 24, 14);
+		}
+
+		&__item {
+            display: flex;
+            flex-direction: column;
+            gap: rem(16);
+		}
+
+		&__text {
+            @include adaptiveClamp(font-size, 18, 14);
+            font-family: var(--bs-font-text);
+		}
+
+		&__i-title {
+            @include adaptiveClamp(font-size, 28, 17);
+		}
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/head.html', {
+        'title': 'Каталог'
+    })
+    <body>
+        <div class="wrapper">
+        @@include('html/header.html')
+
+        <main class="page">
+            <div data-observ></div>
+            @@include('html/page-catalog/about.html')
+            @@include('html/page-catalog/catalog.html')
+            @@include('html/page-catalog/granit.html')
+            @@include('html/proc.html')
+            @@include('html/prod.html')
+            @@include('html/exam.html')
+            @@include('html/price.html')
+
+            @@include('html/serv.html')
+            @@include('html/faq.html')
+            @@include('html/page-catalog/mplex.html')
+            @@include('html/page-catalog/gran-ad.html')
+            @@include('html/consul-black2.html')
+            @@include('html/connect.html', {
+                'classDop':''
+            })
+            
+        </main>
+
+        @@include('html/footer.html')
+        </div>
+
+        @@include('html/popup-example.html')
+    </body>
+</html>

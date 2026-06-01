@@ -1,0 +1,123 @@
+.faq {
+
+    &__body {
+        position: relative;
+    }
+    &__container {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__title {
+        @include adaptiveClamp(margin-bottom, 80, 24);
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        @include adaptiveClamp(gap, 48, 16);
+    }
+
+    &__item {
+    }
+
+    &__btn-row {
+        display: flex;
+        justify-content: center;
+        @include adaptiveClamp(margin-top, 80, 24);
+    }
+
+    &__btn {
+        @include adaptiveClamp(padding-top, 19, 18);
+        @include adaptiveClamp(padding-bottom, 19, 18);
+        @include adaptiveClamp(padding-left, 35, 34);
+        @include adaptiveClamp(padding-right, 35, 34);
+
+        @media(max-width:575px){
+            width: 100%;
+        }
+    }
+}
+
+
+.item-faq {
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: rem(24);
+        @include adaptiveClamp(padding-right, 28, 20);
+        cursor: pointer;
+        transition: all 0.5s ease  0s;
+        border-bottom: rem(1) solid #00000000;
+
+        &:hover {
+            columns: var(--yellow-color);
+        }
+
+        ._active & {
+            @include adaptiveClamp(padding-bottom, 24, 8);
+            margin-bottom: rem(8);
+            border-color: var(--yellow-color);
+        }
+    }
+
+    &__title {
+        @include adaptiveClamp(font-size, 28, 20);
+        letter-spacing: 0.04em;
+        color: var(--black-color);
+        transition: all 0.3s ease  0s;
+    }
+
+    &__icon {
+        position: relative;
+        width: rem(17);
+        height: rem(17);
+        transition: all 0.5s ease  0s;
+
+        &::before, &::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: rem(2);
+            background: #F0BB5A;
+            top:50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            border-radius: 5px;
+        }
+        &::after {
+            transform: translateX(-50%) translateY(-50%) rotate(90deg);
+            transition: all 0.3s ease  0s;
+        }
+        ._active & {
+            transform: rotate(180deg);
+        }
+        ._active &::after {
+            transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        }   
+    }
+
+    &__body {
+        
+        @include adaptiveClamp(font-size, 18, 14);
+        font-family: var(--bs-font-text);
+        transition: max-height 0.5s ease  0s, transform 0.5s ease  0s, opacity 0.4s ease  0s;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: scaleY(0);
+        pointer-events: none;
+        transform-origin: top;
+
+        ._active & {
+            opacity: 1;
+            transform: scaleY(1);
+            pointer-events: all;
+        }
+    }
+
+  
+}
+

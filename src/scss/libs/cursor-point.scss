@@ -1,0 +1,117 @@
+.cursor-follower {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: rem(15);
+    height: rem(15);
+    background-color: var(--bs-mark-color);
+    border-radius: 50%;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%); /* Центрируем точку относительно курсора */
+    transition: 
+    transform 0.1s ease-out,
+    width 0.3s ease,
+    height 0.3s ease,
+    font-size 0.3s ease,
+    background-color 0.3s ease;
+    z-index: 9999;
+    color: var(--white-black-color);
+    font-weight: 500;
+    line-height: 120%;
+    text-align: center;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+  
+    font-size: 0;
+
+    span {
+        display: inline-block;
+        transition: transform 0.3s ease  0s;
+        max-width: rem(90);
+        transform: scale(0);
+    }
+    
+    .blue-page & {
+        color: var(--white-o-b);
+    }
+
+    em {
+        color: rgba(255, 255, 255, 0.7);
+    }
+    .white-theme & {
+        em {
+            color: rgba(13, 13, 13, 0.7);
+        }
+    }
+
+    svg {
+        transition: opacity 0.3s ease  0s;
+    }
+
+
+    @media(max-width:1024px){
+        display: none;
+    }
+
+
+    /* Эффект при наведении на элементы */
+    &.hover-effect {
+        @include adaptiveClamp(width, 149, 80);
+        @include adaptiveClamp(height, 149, 80);
+        @include adaptiveClamp(max-width, 149, 80);
+        @include adaptiveClamp(max-height, 149, 80);
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        @include adaptiveClamp(font-size, 16, 12);
+        @include adaptiveClamp(padding, 30, 10);
+
+        span {
+            transform: scale(1);
+        }
+
+        .white-theme & {
+            background-color: rgba(13, 13, 13, 0.05);
+            border-color: #dfdfdf;
+
+            &.white {
+                background-color: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                color: var(--color-white);
+                em {
+                    color: rgba(255, 255, 255, 0.7);
+                }
+            }
+
+            
+        }
+
+        .white-theme.blue-page & {
+            background-color: rgba(0, 102, 255, 0.05);
+            border-color: rgba(0, 102, 255, 0.15);
+            color: #06f;
+            em {
+                color: #06f;
+            }
+
+            &.white {
+                background-color: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                color: var(--color-white);
+                em {
+                    color: rgba(255, 255, 255, 0.7);
+                }
+            }
+        }
+
+        svg {
+            opacity: 1 !important;
+        }
+    }
+}
+

@@ -1,0 +1,107 @@
+.serv {
+
+		&__container {
+            
+		}
+
+		&__title {
+		}
+
+		&__btn-prev {
+		}
+
+		&__pagin-number {
+		}
+
+		&__btn-next {
+		}
+
+		&__slider {
+            overflow: hidden;
+            padding-bottom: rem(20);
+		}
+
+		&__wrapper {
+		}
+
+		&__slide {
+		}
+}
+
+.serv-card {
+    height: auto;
+		&__body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            &:hover {
+                .serv-card__title {
+                    color: var(--yellow-color);
+                }
+                .serv-card__str {
+                    transform: rotate(90deg);
+                }
+                .serv-card__img {
+                    img {
+                        transform: scale(1.03);
+                    }
+                }
+            }
+		}
+
+		&__img {
+            aspect-ratio: 342 / 445;
+            overflow: hidden;
+
+            img {
+                transition: all 0.6s ease-in-out  0s;
+            }
+		}
+
+		&__bot {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            flex: auto;
+            gap: rem(10);
+            position: relative;
+            z-index: 1;
+            background: var(--white-color);
+            padding: rem(24);
+            margin-left: rem(40);
+            margin-right: rem(-1);
+            margin-top: rem(-54);
+            box-shadow: 0 1px 3px 0 rgba(15, 7, 6, 0.06);
+		}
+
+		&__title {
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #202727;
+            transition: all 0.3s ease  0s;
+            @include adaptiveClamp(font-size, 24, 15);
+            margin-bottom: auto;
+
+            @media(max-width:1440px){
+                max-width: rem(200);
+            }
+            @media(max-width:1024px){
+                max-width: rem(280);
+            }
+            @media(max-width:575px){
+                @include adaptiveClamp(font-size, 50, 15);
+            }
+		}
+
+		&__str {
+            margin-bottom: rem(-8);
+            margin-right: rem(-8);
+            transition: all 0.3s ease  0s;
+            margin-top: auto;
+
+            img {
+                width: rem(24);
+                height: rem(24);
+            }
+		}
+}
