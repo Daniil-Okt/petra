@@ -21,6 +21,7 @@ import { initFormLists } from './modules/form-list';
 import { initExamTabs } from './modules/exam-tabs';
 import { initExamLoadMore } from './modules/exam-load-more';
 import { initFaqToggle } from './modules/faq-toggle';
+import { initCookia } from './modules/cookia';
 import { toggleSearchOpen, initDownLists, initPortRowsMobile } from './modules/index';
 // import { initAutoplayVideo } from './modules/autoplayVideo';
 
@@ -77,6 +78,7 @@ initDownLists()
 initPortRowsMobile()
 initFormLists()
 initFaqToggle()
+initCookia()
 
 initReviewsPopupContent();
 
