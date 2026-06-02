@@ -73,6 +73,7 @@
     &__icon {
         position: relative;
         width: rem(17);
+        min-width: rem(17);
         height: rem(17);
         transition: all 0.5s ease  0s;
 
@@ -117,7 +118,9 @@
             pointer-events: all;
         }
     }
-
+    .item-faq__title {
+        @include adaptiveClamp(font-size, 28, 17);
+    }
   
 }
 

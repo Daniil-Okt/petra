@@ -7,7 +7,7 @@
     @media(min-width:1025px){
         @include adaptiveClamp(min-height, 900, 600);
     }
-    
+
     &__crumbs {
     }
 
@@ -241,8 +241,13 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: rem(16);
-    
+    // gap: rem(4) rem(16);
+    @include adaptiveClamp(column-gap, 16, 8);
+    row-gap: rem(4);
+
+    @media(max-width:650px){
+        display: none;
+    }
 
     &__link {
         display: flex;
@@ -267,7 +272,8 @@
     &__item {
         display: flex;
         align-items: center;
-        gap: rem(16);
+        // gap: rem(16);
+        @include adaptiveClamp(gap, 16, 8);
 
         &:last-child {
             .crumbs__link {

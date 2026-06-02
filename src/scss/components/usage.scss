@@ -1,0 +1,77 @@
+.usage {
+    // @include adaptiveClamp(padding-bottom, 100, 42);
+		&__container {
+		}
+
+		&__title {
+		}
+
+		&__body {
+            display: flex;
+            flex-direction: column;
+            @include adaptiveClamp(gap, 80, 32);
+		}
+
+		&__item {
+            display: flex;
+            flex-direction: column;
+            gap: rem(24);
+		}
+
+		&__img {
+            img {
+                @include adaptiveClamp(height, 400, 200);
+            }
+		}
+
+		&__text {
+            display: flex;
+            flex-direction: column;
+            gap: rem(16);
+            
+            
+            h3 {
+                @include adaptiveClamp(font-size, 28, 17);
+                line-height: 140%;
+                letter-spacing: 0.04em;
+            }
+
+            p {
+                @include adaptiveClamp(font-size, 18, 14);
+                font-family: var(--bs-font-text);
+            }
+		}
+
+		&__img-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            @include adaptiveClamp(gap, 24, 16);
+		}
+
+        .faq__row {
+            gap: rem(24) !important;
+        }
+}
+
+.faq {
+
+		&__row {
+		}
+
+		&__item {
+		}
+}
+.item-faq {
+
+		&__top {
+		}
+
+		&__title {
+		}
+
+		&__icon {
+		}
+
+		&__body {
+		}
+}

@@ -777,3 +777,38 @@ forms.forEach(form => {
 // import { toggleActiveClass } from './modules/index.js'
 // const elementAll = document.querySelectorAll('.class');
 // toggleActiveClass(elementAll)
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const socPan = document.querySelector('.soc-pan');
+    const btn = socPan ? socPan.querySelector('.soc-pan__btn') : null;
+    
+    if (!socPan || !btn) return;
+    
+    // Функция закрытия панели
+    function closePanel() {
+        socPan.classList.remove('_active');
+    }
+    
+    // Функция открытия панели
+    function openPanel() {
+        socPan.classList.add('_active');
+    }
+    
+    // Обработчик клика по кнопке: переключение класса
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation(); // чтобы клик не всплывал на document
+        if (socPan.classList.contains('_active')) {
+            closePanel();
+        } else {
+            openPanel();
+        }
+    });
+    
+    // Обработчик клика по document: если клик вне soc-pan, закрываем
+    document.addEventListener('click', function(e) {
+        if (!socPan.contains(e.target)) {
+            closePanel();
+        }
+    });
+});
